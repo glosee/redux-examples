@@ -48,7 +48,7 @@ function render() {
 	counterEl.innerHTML = store.getState().toString();
 }
 
-// Render once on page load to show the initial state;
+// Render once on page load to show the initial state.
 render();
 
 // Subscribe to changes in the store, and re-render the counter when a change is detected.
