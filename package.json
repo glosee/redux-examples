@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "copy-index": "cp src/index.html dist/index.html",
-    "build": "./node_modules/.bin/browserify -d -e src/app.jsx -o dist/app.js -t [ babelify --presets [ es2015 react ] ] && npm run copy-index",
-    "serve": "cd ./dist && python -m SimpleHTTPServer"
+    "clean-dist": "rm ./dist/*",
+    "copy:html": "find ./src -name '*.html' -exec cp {} ./dist/ \\;",
+    "copy:vanillajs": "find ./src -name '*.js' -exec cp {} ./dist/ \\;",
+    "build:js": "./node_modules/.bin/browserify -d -e src/app.jsx -o dist/app.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
+    "build": "npm run clean-dist && npm run build:js && npm run copy:html && npm run copy:vanillajs",
+    "serve": "python -m SimpleHTTPServer"
   },
   "keywords": [],
-  "author": "",
+  "author": "Graham Losee",
   "license": "ISC",
   "devDependencies": {
     "babel": "^6.5.2",
