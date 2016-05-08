@@ -6,9 +6,10 @@
   "scripts": {
     "clean-dist": "rm ./dist/*",
     "copy:html": "find ./src -name '*.html' -exec cp {} ./dist/ \\;",
-    "copy:vanillajs": "find ./src -name '*.js' -exec cp {} ./dist/ \\;",
-    "build:js": "./node_modules/.bin/browserify -d -e src/app.jsx -o dist/app.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
-    "build": "npm run clean-dist && npm run build:js && npm run copy:html && npm run copy:vanillajs",
+    "build:jsx": "./node_modules/.bin/browserify -d -e src/app.jsx -o dist/app.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
+		"build:js": "./node_modules/.bin/browserify -d -e src/vanilla.js -o dist/vanilla.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
+		"build:scripts": "npm run build:jsx && npm run build:js",
+    "build": "npm run clean-dist && npm run build:scripts && npm run copy:html",
     "serve": "python -m SimpleHTTPServer"
   },
   "keywords": [],
