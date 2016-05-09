@@ -1,4 +1,3 @@
-
 /**
 * Factory function that allows you to create a store. Returns an object with three API methods: `getState` to return
 * the current state of the store, `dispatch` to send an action to this store, and `subscribe` to listen to changes

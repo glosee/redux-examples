@@ -12,7 +12,9 @@ This repository is a series of examples of using Redux for demonstration purpose
 ## What to talk about
 
 * Using redux without react
-* Using redux with react
-* Using redux with thunks and promises
+* Implementing `createStore` with vanilla JS
+* Using redux with react (simply, without `connect` or the `react-redux` bindings)
+* Using react-redux (react-connected)
+* Using redux with thunks and promises (react-async)
 * Some high-level project architecture decisions
 * The redux dev tools
