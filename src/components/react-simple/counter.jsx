@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Counter = props => (
-	<div className="counter">
-		<p>{props.value}</p>
+	<div className="wrapper-counter">
+		<div ref="counter">{props.value}</div>
 	</div>
 );
 

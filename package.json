@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean-dist": "rm -rf ./dist && mkdir ./dist",
-    "copy:html": "find ./src -name '*.html' -exec cp {} ./dist/ \\;",
-    "build:jsx": "./node_modules/.bin/browserify -d -e src/app.jsx -o dist/app.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
-    "build:js": "./node_modules/.bin/browserify -d -e src/vanilla.js -o dist/vanilla.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
-    "build:scripts": "npm run build:jsx && npm run build:js",
+    "copy:html": "find ./src/entry-points -name '*.html' -exec cp {} ./dist/ \\;",
+    "build:react-simple": "./node_modules/.bin/browserify -d -e src/entry-points/react-simple/app.jsx -o dist/react-simple.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
+    "build:vanilla-js": "./node_modules/.bin/browserify -d -e src/entry-points/vanilla/vanilla.js -o dist/vanilla.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
+    "build:scripts": "npm run build:react-simple && npm run build:vanilla-js",
     "build": "npm run clean-dist && npm run build:scripts && npm run copy:html",
     "serve": "python -m SimpleHTTPServer"
   },

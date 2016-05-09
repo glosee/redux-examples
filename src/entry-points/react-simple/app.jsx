@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 import { createStore } from 'redux';
 
-import Counter from './components/react-simple/counter.jsx';
-import counterReducer from './reducers/counterReducer.js';
+import Counter from '../../components/react-simple/counter.jsx';
+import counterReducer from '../../reducers/counterReducer.js';
 
 const store = createStore(counterReducer);
 
