@@ -1,4 +1,4 @@
-// import { createStore } from 'redux';
+import { createStore } from 'redux';
 // import createStore from '../../utils/createStore.js';
 
 // Our application's initial state
@@ -9,30 +9,6 @@ const ACTIONS = {
 	INCREMENT: 'INCREMENT',
 	DECREMENT: 'DECREMENT',
 };
-
-// function createStore(reducer) {
-// 	let state;
-//
-// 	let listeners = [];
-//
-// 	const getState = () => state;
-//
-// 	const dispatch = (action) => {
-// 		state = reducer(state, action);
-// 		listeners.forEach(listener => listener());
-// 	}
-//
-// 	const subscribe = (listener) => {
-// 		listeners.push(listener);
-// 		return () => {
-// 			listeners = listeners.filter(l => l !== listener)
-// 		}
-// 	}
-//
-// 	dispatch({});
-//
-// 	return { getState, subscribe, dispatch };
-// }
 
 // REDUCER
 function counter(state, action) {

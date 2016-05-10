@@ -6,9 +6,10 @@
   "scripts": {
     "clean-dist": "rm -rf ./dist && mkdir ./dist",
     "copy:html": "find ./src/entry-points -name '*.html' -exec cp {} ./dist/ \\;",
+		"build:react-advanced": "./node_modules/.bin/browserify -d -e src/entry-points/react-advanced/index.js -o dist/react-advanced.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
     "build:react-simple": "./node_modules/.bin/browserify -d -e src/entry-points/react-simple/app.jsx -o dist/react-simple.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
     "build:vanilla-js": "./node_modules/.bin/browserify -d -e src/entry-points/vanilla/vanilla.js -o dist/vanilla.js -t [ babelify --presets [ es2015 react ] --plugins [ transform-class-properties ] ]",
-    "build:scripts": "npm run build:react-simple && npm run build:vanilla-js",
+    "build:scripts": "npm run build:react-simple && npm run build:vanilla-js && npm run build:react-advanced",
     "build": "npm run clean-dist && npm run build:scripts && npm run copy:html",
     "serve": "python -m SimpleHTTPServer"
   },

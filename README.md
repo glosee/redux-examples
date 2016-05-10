@@ -8,7 +8,6 @@ This repository is a series of examples of using Redux for demonstration purpose
 2. `npm install`
 3. `npm run build` in one terminal window, and `npm run serve` in another (uses python's `SimpleHTTPServer`)
 
-
 ## What to talk about
 
 * Using redux without react
@@ -18,3 +17,10 @@ This repository is a series of examples of using Redux for demonstration purpose
 * Using redux with thunks and promises (react-async)
 * Some high-level project architecture decisions
 * The redux dev tools
+
+## TODO
+
+* Example with `react-redux`
+* Example with async actions
+* Finish deck
+* write blog post about it!
