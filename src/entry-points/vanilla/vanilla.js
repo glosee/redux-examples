@@ -1,10 +1,9 @@
 import { createStore } from 'redux';
-// import createStore from '../../utils/createStore.js';
 
-// Our application's initial state
+// Our application's initial STATE
 const INITIAL_STATE = 0;
 
-// Enumerated list of action names
+// Enumerated list of ACTION names
 const ACTIONS = {
 	INCREMENT: 'INCREMENT',
 	DECREMENT: 'DECREMENT',
@@ -12,8 +11,6 @@ const ACTIONS = {
 
 // REDUCER
 function counter(state, action) {
-
-	console.log('counter reducer', state, action);
 
 	// When state is undefined return an expected initialState. This could happen during an initialization sequence,
 	// or if there was some kind of error.
@@ -44,7 +41,7 @@ const store = createStore(counter);
 // Deal with displaying the application's state from the store - aka "render"
 const counterEl = document.getElementById('counter');
 function render() {
-	console.log('render', store.getState());
+	console.log('RENDER!');
 	counterEl.innerHTML = store.getState().toString();
 }
 
