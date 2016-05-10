@@ -7,7 +7,6 @@ import Counter from '../../components/react-advanced/counter.jsx';
 import CounterControls from '../../components/react-advanced/counter-controls.jsx';
 
 const mapStateToProps = state => {
-	console.log('map state to props', state);
 	return {
 		value: state,
 	};
@@ -25,27 +24,14 @@ const mapDispatchToProps = (dispatch, ownProps) => (
 	}
 );
 
-class CounterContainer extends React.Component {
-
-	onIncrementClick() {
-		console.log('on increment click');
-	}
-
-	onDecrementClick() {
-		console.log('on decrement click');
-	}
-
-	render() {
-		return (
-			<div className="wrapper-internal">
-				<Counter value={this.props.value} />
-				<CounterControls
-					onIncrementClick={this.props.onIncrementClick}
-					onDecrementClick={this.props.onDecrementClick}
-				/>
-			</div>
-		);
-	}
-}
+const CounterContainer = ({ value, onIncrementClick, onDecrementClick }) => (
+	<div className="wrapper-internal">
+		<Counter value={value} />
+		<CounterControls
+			onIncrementClick={onIncrementClick}
+			onDecrementClick={onDecrementClick}
+		/>
+	</div>
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);

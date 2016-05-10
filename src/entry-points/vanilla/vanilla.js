@@ -39,7 +39,7 @@ function counter(state, action) {
 }
 
 // Initialize the store
-const store = createStore(counter, INITIAL_STATE, window.devToolsExtension ? window.devToolsExtension() : undefined);
+const store = createStore(counter);
 
 // Deal with displaying the application's state from the store - aka "render"
 const counterEl = document.getElementById('counter');

@@ -24,3 +24,18 @@ This repository is a series of examples of using Redux for demonstration purpose
 * Example with async actions
 * Finish deck
 * write blog post about it!
+
+## Flow
+* Have multiples of the project open in atom for every example, with only the files that you want to show for that example open!
+* Show code examples in a series of files in atom
+* Show deck
+** talk about "the gist"
+** talk about differences with flux
+** show some ES6 examples
+** talk about some terms
+* Show vanilla JS example
+* Implement `createStore` quickly
+* Show react-simple example
+* Show react-advanced example
+* Implement `RESET` action to show how easy it is to keep adding
+* Show `react-advanced-pro` example (if there's time/if you can do it)

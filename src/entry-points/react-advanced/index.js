@@ -3,10 +3,13 @@ import { Provider } from 'react-redux';
 import React from 'react';
 import { render } from 'react-dom';
 
-import App from './app.jsx';
 import counterReducer from '../../reducers/counterReducer.js';
 
-const store = createStore(counterReducer);
+import App from '../../components/react-advanced/app.jsx';
+
+const devTools = window.devToolsExtension && window.devToolsExtension();
+
+const store = createStore(counterReducer, devTools);
 
 const renderApp = () => (
 	<Provider store={store}>

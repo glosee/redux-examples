@@ -6,4 +6,8 @@ const Counter = props => (
 	</div>
 );
 
+Counter.propTypes = {
+	value: React.PropTypes.number,
+};
+
 export default Counter;
