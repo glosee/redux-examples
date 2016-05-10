@@ -1,9 +1,31 @@
+import { connect } from 'react-redux';
 import React from 'react';
+
+import actions from '../../actions/counterActions.js';
 
 import Counter from '../../components/react-advanced/counter.jsx';
 import CounterControls from '../../components/react-advanced/counter-controls.jsx';
 
-export default class CounterContainer extends React.Component {
+const mapStateToProps = state => {
+	console.log('map state to props', state);
+	return {
+		value: state,
+	};
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => (
+	{
+		onIncrementClick: () => {
+			dispatch({ type: actions.INCREMENT });
+		},
+
+		onDecrementClick: () => {
+			dispatch({ type: actions.DECREMENT });
+		},
+	}
+);
+
+class CounterContainer extends React.Component {
 
 	onIncrementClick() {
 		console.log('on increment click');
@@ -14,15 +36,16 @@ export default class CounterContainer extends React.Component {
 	}
 
 	render() {
-		const { value } = this.props;
 		return (
 			<div className="wrapper-internal">
-				<Counter value={100} />
+				<Counter value={this.props.value} />
 				<CounterControls
-					onIncrementClick={this.onIncrementClick.bind(this)}
-					onDecrementClick={this.onDecrementClick.bind(this)}
+					onIncrementClick={this.props.onIncrementClick}
+					onDecrementClick={this.props.onDecrementClick}
 				/>
 			</div>
 		);
 	}
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);

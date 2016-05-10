@@ -1,6 +1,6 @@
 import actions from '../actions/counterActions.js';
 
-const INITIAL_STATE = 10;
+const INITIAL_STATE = 0;
 
 // REDUCER
 export default function counter(state, action) {
