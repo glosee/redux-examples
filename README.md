@@ -38,4 +38,4 @@ This repository is a series of examples of using Redux for demonstration purpose
 * Show react-simple example
 * Show react-advanced example
 * Implement `RESET` action to show how easy it is to keep adding
-* Show `react-advanced-pro` example (if there's time/if you can do it)
+* Show the dev tools!

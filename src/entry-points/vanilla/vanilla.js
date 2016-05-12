@@ -13,12 +13,13 @@ const ACTIONS = {
 function counter(state, action) {
 
 	// When state is undefined return an expected initialState. This could happen during an initialization sequence,
-	// or if there was some kind of error.
+	// or if there was some kind of error. Doing this allows the application to continue, and components could potentially
+	// tell whether or not they need to change.
 	if (typeof state === 'undefined') {
 		return INITIAL_STATE;
 	}
 
-	// Based on the action that was passed in, calculate and return the next state. Only handle actions of type that you
+	// Based on the action that was passed in, compute and return the next state. Only handle actions of type that you
 	// know. Ignore any other actions by returning the state that was passed in.
 	switch (action.type) {
 		case ACTIONS.INCREMENT:
@@ -35,8 +36,12 @@ function counter(state, action) {
 	}
 }
 
-// Initialize the store
+// Initialize the STORE by passing in the reducer.
 const store = createStore(counter);
+
+//
+// Boring vanilla JS code to update the application based on the store...
+//
 
 // Deal with displaying the application's state from the store - aka "render"
 const counterEl = document.getElementById('counter');
